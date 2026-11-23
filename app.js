@@ -10,6 +10,7 @@
       id: "pre",
       name: "Pre-production",
       stages: [
+        { id: "deposit", label: "Deposit Received", short: "Deposit" },
         { id: "suno", label: "Suno Flat BPM Demo", short: "Suno BPM" },
         { id: "arrange", label: "Arrangement Finalization", short: "Arrange" },
         { id: "click", label: "Click / Guide" },
@@ -97,6 +98,8 @@
     if (stage.flag === "fiddle" && !stage.by && DATA.fiddleFirstCall) {
       parts.push("First call: " + DATA.fiddleFirstCall);
     }
+    const stageNote = song.stageNotes && song.stageNotes[stage.id];
+    if (stageNote) parts.push(stageNote);
     return parts.join(" · ");
   };
 
@@ -181,8 +184,10 @@
     const done = isDone(s, st.id);
     const who = playerOf(s, st);
     const whoHtml = who ? ` <span class="who">— ${esc(who)}</span>` : (st.id === "eg2" ? ` <span class="who">— TBA</span>` : "");
+    const stageNote = s.stageNotes && s.stageNotes[st.id];
+    const noteHtml = stageNote ? ` <span class="who">— ${esc(stageNote)}</span>` : "";
     const title = ` title="${esc(hintOf(s, st))}"`;
-    return `<li${title}>${mk(done ? "done" : "open")}<span>${esc(st.label)}${whoHtml}</span></li>`;
+    return `<li${title}>${mk(done ? "done" : "open")}<span>${esc(st.label)}${whoHtml}${noteHtml}</span></li>`;
   }
 
   function demoList(s) {
@@ -209,7 +214,8 @@
       const items = p.stages.map((st) => stageItem(s, st)).join("");
       return items ? `<div class="ph-lab">${esc(p.name)}</div><ul class="stages">${items}</ul>` : "";
     }).join("");
-    const note = s.note ? `<p class="song-note">${esc(s.note)}</p>` : "";
+    const notes = [s.note, s.stageNotes && s.stageNotes.deposit].filter(Boolean);
+    const note = notes.map((t) => `<p class="song-note">${esc(t)}</p>`).join("");
     return `<article class="card" id="song-${s.id}">
       <span class="num" aria-hidden="true">${String(s.n).padStart(2, "0")}</span>
       <h3>${esc(s.title)}</h3>

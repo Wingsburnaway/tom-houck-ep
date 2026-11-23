@@ -482,11 +482,13 @@ td.opt { background: rgba(91, 110, 128, 0.05); }
   font: 400 0.98rem/1.4 var(--sans);
   color: var(--mute);
 }
-.card .sub + .song-note {
-  margin: -10px 56px 16px 0;
+.card .song-note {
+  margin: 0 56px 4px 0;
   font: 400 0.9rem/1.4 var(--sans);
   color: var(--mute);
 }
+.card .sub + .song-note { margin-top: -10px; }
+.card .song-note:last-of-type { margin-bottom: 16px; }
 .card .num {
   position: absolute; right: 16px; top: 16px;
   font: 400 1.7rem/1 var(--serif);

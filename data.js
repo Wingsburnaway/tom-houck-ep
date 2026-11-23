@@ -18,7 +18,7 @@
      List completed stage ids in song.done, for example:
        done: ["suno", "arrange", "click"]
      Stage ids:
-       Pre-production: suno, arrange, click, orch, charts, finalBounce
+       Pre-production: deposit, suno, arrange, click, orch, charts, finalBounce
        Production:     drums, drumEdits, bass, acoustic, rhythm, gtrEdits,
                        keys, fiddle, fiddleEdits, eg2, leadVox, leadEdits,
                        bgVox, bgEdits, deliver
@@ -82,7 +82,7 @@ window.TOM_HOUCK_EP = {
           { label: "All versions", url: "DRIVE", note: "" }
         ]
       },
-      done: []
+      done: ["deposit"]
     },
     {
       id: "dark-horse",
@@ -109,7 +109,7 @@ window.TOM_HOUCK_EP = {
           { label: "All versions", url: "DRIVE", note: "" }
         ]
       },
-      done: []
+      done: ["deposit"]
     },
     {
       id: "my-god-is-bigger",
@@ -139,7 +139,7 @@ window.TOM_HOUCK_EP = {
           { label: "All versions", url: "DRIVE", note: "" }
         ]
       },
-      done: []
+      done: ["deposit"]
     },
     {
       id: "theme",
@@ -162,7 +162,7 @@ window.TOM_HOUCK_EP = {
           { label: "All versions", url: "DRIVE", note: "" }
         ]
       },
-      done: []
+      done: ["deposit"]
     },
     {
       id: "southern-star",
@@ -189,7 +189,7 @@ window.TOM_HOUCK_EP = {
           { label: "All versions", url: "DRIVE", note: "" }
         ]
       },
-      done: []
+      done: ["deposit"]
     },
     {
       id: "say-hello",
@@ -216,7 +216,7 @@ window.TOM_HOUCK_EP = {
           { label: "All versions", url: "DRIVE", note: "" }
         ]
       },
-      done: []
+      done: ["deposit"]
     },
     {
       id: "i-wonder",
@@ -225,6 +225,9 @@ window.TOM_HOUCK_EP = {
       subtitle: "Synth rock",
       /* Subtle on-card / grid note. This song is in production with the others. */
       note: "May be cut later.",
+      stageNotes: {
+        deposit: "Not in deposit yet — if kept, deposit amount updates."
+      },
       flags: {
         keys: "Rob Hitchcock",
         eg2: true,
