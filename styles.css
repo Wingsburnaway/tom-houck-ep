@@ -219,6 +219,16 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0
 
 /* NEXT UP */
 .next-up { margin: 0 0 28px; }
+.done-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  font: 400 0.95rem/1.4 var(--sans);
+  color: var(--ink-soft);
+}
+.done-line .mk { flex: none; }
+
 .alert-card {
   background:
     linear-gradient(180deg, rgba(244, 242, 237, .55), rgba(226, 203, 168, .28)),
