@@ -126,7 +126,7 @@
     }).join(" ");
     const head1 = phases.map((p) => `<th colspan="${p.stages.length}" class="${p.id} grp">${esc(p.name)}</th>`).join("");
     const head2 = phases.map((p) => p.stages.map((st, i) =>
-      `<th class="st ${i ? "" : "grp"} ${st.optional ? "opt" : ""}" title="${esc(st.label)}">${esc(st.short || st.label)}</th>`
+      `<th class="st ${i ? "" : "grp"} ${st.optional ? "opt" : ""}" title="${esc(st.label)}"><span class="colh">${esc(st.short || st.label)}</span></th>`
     ).join("")).join("");
     const rows = SONGS.map((s) => {
       const cells = phases.map((p) => p.stages.map((st, i) => {
