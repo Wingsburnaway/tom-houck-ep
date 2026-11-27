@@ -606,14 +606,14 @@ td.opt { background: rgba(91, 110, 128, 0.05); }
   font: 400 0.98rem/1.55 var(--sans);
   color: var(--ink-soft);
 }
-.rob-notes {
-  margin: 0;
+.notes-block ul {
+  margin: 8px 0 0;
   padding: 0 0 0 1.15em;
   font: 400 0.98rem/1.55 var(--sans);
   color: var(--ink-soft);
 }
-.rob-notes li { margin: 0 0 4px; }
-.rob-notes li:last-child { margin-bottom: 0; }
+.notes-block ul li { margin: 0 0 6px; }
+.notes-block ul li:last-child { margin-bottom: 0; }
 
 .dl { list-style: none; margin: 8px 0 0; padding: 0; font-size: 13px; }
 .dl li {

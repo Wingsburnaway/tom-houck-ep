@@ -121,14 +121,25 @@
     return `<p class="ly-empty">Lyrics not added yet.</p>`;
   }
 
+  function noteItems(val) {
+    if (Array.isArray(val)) return val.map((t) => String(t || "").trim()).filter(Boolean);
+    const s = String(val || "").trim();
+    return s ? [s] : [];
+  }
+
   function notesPanel(s) {
-    const tom = String(s.tomNotes || "").trim();
-    const rob = (Array.isArray(s.robNotes) ? s.robNotes : [])
-      .map((t) => String(t || "").trim())
-      .filter(Boolean);
-    if (!tom && !rob.length) return "";
-    const tomBlock = tom
-      ? `<div class="notes-block"><h4>Tom’s notes</h4><p>${esc(tom)}</p></div>`
+    const tom = noteItems(s.tomNotes);
+    const rob = noteItems(s.robNotes);
+    if (!tom.length && !rob.length) return "";
+    let tomInner = "";
+    if (tom.length === 1) {
+      tomInner = `<p>${esc(tom[0])}</p>`;
+    } else if (tom.length > 1) {
+      const rest = tom.slice(1).map((t) => `<li>${esc(t)}</li>`).join("");
+      tomInner = `<p>${esc(tom[0])}</p><ul class="tom-notes">${rest}</ul>`;
+    }
+    const tomBlock = tomInner
+      ? `<div class="notes-block"><h4>Tom’s notes</h4>${tomInner}</div>`
       : "";
     const robBlock = rob.length
       ? `<div class="notes-block"><h4>Rob’s notes</h4><ul class="rob-notes">${rob.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>`

@@ -10,8 +10,10 @@
      and the card will show a short placeholder until lyrics are added.
 
    Notes:
-     song.tomNotes  — Tom’s production notes as plain text. Leave "" or omit
-                      to hide the Tom’s notes block on that card.
+     song.tomNotes  — Tom’s production notes. A single string, or an array of
+                      strings (the first item is the original general note;
+                      later items show as bullets under the same heading).
+                      Leave "" / [] or omit to hide the Tom’s notes block.
      song.robNotes  — Rob’s notes as an array of bullet strings. Leave [] or
                       omit to hide the Rob’s notes block. The Notes section
                       is omitted entirely when both are empty.
@@ -100,7 +102,12 @@ When I think of all you’ve done for me
 How can I write a better story?
 There’s no place I would rather be
 Surrounded by all of Your glory`,
-      tomNotes: "Upbeat, catchy, feel-good song about heaven. mostly acoustic. Instrumental interlude after 2nd chorus was different from what I wrote. Wouldn’t finish the song that way.",
+      tomNotes: [
+        "Upbeat, catchy, feel-good song about heaven. mostly acoustic. Instrumental interlude after 2nd chorus was different from what I wrote. Wouldn’t finish the song that way.",
+        "Suno vibe is good. Similar instrumentation to The Lazy Song (Bruno Mars) or I Love the Way You Love Me (jamie grace). Just needs to be catchy, happy, pop’ish",
+        "Regarding above, I always envisioned “It feels so good” line being a sing-along line at a concert. Sort of fist pumping vibe (hopefully you know what I mean)",
+        "I included chords on chord chart."
+      ],
       robNotes: [
         "Forrest Frank vibes",
         "Sampled / real drums",
@@ -159,7 +166,14 @@ There’s not a wall I won’t break through
 I understand I’m not the safest bet
 But I don’t want you burdened with any regrets
 Wouldn’t you rather say you knew it all along?`,
-      tomNotes: "Supposed to be a “I can do it” type song. Verses maybe more acoustic, leading to bigger chorus. Last part of song thru outro changed by AI….but you get general idea here",
+      tomNotes: [
+        "Supposed to be a “I can do it” type song. Verses maybe more acoustic, leading to bigger chorus. Last part of song thru outro changed by AI….but you get general idea here",
+        "Should we do intro again after first chorus (before second verse)? song is advancing fast. Second verse currently starts at 0:56",
+        "Related to above, should we add an extra measure on chord right before chorus (for just the first verse maybe?)",
+        "After bridge, I’d like to tweak guitar solo section…..instead of hitting the G7 and C chords, make those A and Dm as well. So A/Dm 3x then Bb, F/A, G, C (don’t climb the ladder here) before final chorus",
+        "I kind of like how they handled final chorus (what do you think). Then I imagine doing final chorus just once before going into ending (unless you think we need to hit 2x). In my piano demo, I repeated chorus with more guitar jamming time. Anyway, we just need to decide on best approach",
+        "After final chorus, go with the ending on my chord chart (I don’t know what Suno was doing). My approach is kind of different, but I want something unique in most of the songs. Need to decide how many measures those chords should have (probably should be double what I did on demo), but I think ending this way is cool. Last 2 chords is Pinball Wizard intro-ish-----which we could emphasize or not with piano or guitar. Kind of cool too."
+      ],
       robNotes: [
         "Catchy, Queen “Don’t Stop Me Now”",
         "Review lyrics, make less wordy in chorus",
@@ -225,7 +239,12 @@ And learn how to let go
 
 So I pray to the Mighty One
 Who holds the world in his hand`,
-      tomNotes: "Typical worship song. I didn’t like how they handled final chorus after instrumental interlude. Envisioned intro being done differently.",
+      tomNotes: [
+        "Typical worship song. I didn’t like how they handled final chorus after instrumental interlude. Envisioned intro being done differently.",
+        "I imagined a more muscular intro than what Suno did, but this song is one where I really want to rely on you guys to make it the best possible CCM-sounding song",
+        "I like big choir effect on last chorus---didn’t love how suno did it, but maybe big final chorus and repeat chorus again (perhaps with less lyrics, more musical) on second/final time.",
+        "Undecided on how to end. Soft piano? Or strong chords like intro?"
+      ],
       robNotes: [
         "CCM, very good",
         "Big orchestral",
@@ -254,7 +273,12 @@ Who holds the world in his hand`,
         fiddle: true
       },
       lyrics: "",
-      tomNotes: "Instrumental. Piano lead with strings accompanying. Doesn’t have to be real strings for our purposes. AI messed up ending a bit.",
+      tomNotes: [
+        "Instrumental. Piano lead with strings accompanying. Doesn’t have to be real strings for our purposes. AI messed up ending a bit.",
+        "Overall, Suno did a decent job although mixing could be better. Beautiful but not sappy",
+        "I envisioned the ending being more dramatic (F/A, Bbm…Ebm, Bb/D sequence until final chord)…my original demo emphasizes this more than the Suno version",
+        "Suno tempo might be a tad fast?"
+      ],
       robNotes: [
         "Beautiful instrumental"
       ],
@@ -310,7 +334,12 @@ Final chorus:
 Oh, Rhonda, this is “Your Song”
 Now it seems like you’ve been here all along
 Through the days and nights, a shining light….`,
-      tomNotes: "I’d like to make this song work somehow even if not ready now. It’s written for my wife. Was thinking maybe a southern rock ballad vibe somehow. Piano emphasis in intro and outro and the musical bridge where AI completely ignored what I did. They also kept guitar solo going into chorus (which I didn’t do). Supposed to end at 3:30.",
+      tomNotes: [
+        "I’d like to make this song work somehow even if not ready now. It’s written for my wife. Was thinking maybe a southern rock ballad vibe somehow. Piano emphasis in intro and outro and the musical bridge where AI completely ignored what I did. They also kept guitar solo going into chorus (which I didn’t do). Supposed to end at 3:30.",
+        "Instrumental Bridge should be piano solo which goes to final chorus (Suno added some long fancy guitar solo----I did not like, way too long). I would prefer piano solo like in my original demo going into final chorus which is stripped down (unlike say hello) and then come back full band at “in the middle of the night….”",
+        "I don’t think (and don’t really want) this song has to sound too country. Two songs worth taking a quick listen to are Elton’s “Amazes Me” and “Porch Swing in Tupelo.” I’m not saying this is what it should sound like, but they both seem to have a southern feel---“Amazes” doesn’t sound country at all, and “Porch Swing” has a southern, slight country vibe. Again, these aren’t perfect examples, but at least are discussion starters",
+        "Suno changes my ending and then starts songs over again at the end. Lol. Not supposed to do any of that"
+      ],
       robNotes: [
         "Country power ballad",
         "Pretty strong"
@@ -366,7 +395,11 @@ The One the angels sing about and every knee will bow
 He wants you by His side, to take you for a ride
 He’s reaching out to you
 Your future’s overdue`,
-      tomNotes: "Worship song. Piano originally an octave lower and continues that approach in the verses. But open to discussion. Bridge supposed to transition into big chorus.",
+      tomNotes: [
+        "Worship song. Piano originally an octave lower and continues that approach in the verses. But open to discussion. Bridge supposed to transition into big chorus.",
+        "Original inspiration musically was a MercyMe song called Finally Home. I’m not saying it should sound like this, but just FYI in case it sparks any ideas.",
+        "Mellow outro after big final chorus"
+      ],
       robNotes: [
         "Good for Tanner",
         "Interesting changes and vibes"
@@ -430,7 +463,14 @@ The first time you called my name
 The first time I felt your hair
 The first time you kissed me on the cheek
 That’s what I remember`,
-      tomNotes: "Dark. About a son who turns against his father. AI makes it sound very 80s. Not really the intent. I would do the first half of the verses differently musically. Needs a better transition to chorus. Bridge after second chorus/guitar solo was supposed to be Dixieland jazz (an abrupt flashback to happier times), but AI did it differently. Open to thoughts on this of course.",
+      tomNotes: [
+        "Dark. About a son who turns against his father. AI makes it sound very 80s. Not really the intent. I would do the first half of the verses differently musically. Needs a better transition to chorus. Bridge after second chorus/guitar solo was supposed to be Dixieland jazz (an abrupt flashback to happier times), but AI did it differently. Open to thoughts on this of course.",
+        "I have some definite ideas about how to rhythemically handle the verse. Hard to explain in writing, but I’ll try. Eb chords are single sustain notes for guitars/synth, just kick or cymbol or something underneath. Then they jam on the Gms chords with a lot more energy. Repeat. When you get to the F chords, I feel like percussion/rhythm should change again. Sort of a syncopated drum beat (hard to explain in writing!). Then Chorus needs to have a different feel, rocking for sure.",
+        "Not a fan of the vocal on suno. Tears for Fears—lol. Probably good for James’ flexibility so we can find the right voice",
+        "The flashback section (“the first time…”). This was originally supposed to have a much different feel since it’s a flashback to a much happier time long ago. I originally wanted (because I’m a big fan) a new orleans style dixie jazz section here with horns I know we’re not doing that. Just need to figure out how to make it good.",
+        "Suno changed ending too---need to decide how to do last verse. Full verse or modified first verse?",
+        "Probably easier to talk about this one live---lol"
+      ],
       robNotes: [
         "Synthwave and The Killers",
         "Very good"
