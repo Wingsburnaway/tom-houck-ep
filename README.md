@@ -19,11 +19,12 @@ The signed-in name is stored in this browser only (localStorage) for two weeks. 
 
 ## Updating the site
 
-Edit **`data.js`**. That one file holds songs, players, lyrics, demo links, and checkmarks. Comments at the top of the file list every stage id and how to fill each field.
+Edit **`data.js`**. That one file holds songs, players, lyrics, notes, demo links, and checkmarks. Comments at the top of the file list every stage id and how to fill each field.
 
 Typical updates:
 
 - Add lyrics: set `song.lyrics` to the plain text.
+- Add notes: set `song.tomNotes` to Tom’s text, and `song.robNotes` to an array of Rob’s bullet strings.
 - Link a bounce: set `song.demos.latestUrl` to the audio file (the on-card player will use it) and put the same URL on the “Latest bounce” item in `song.demos.versions`.
 - Check off a stage: add its id to `song.done`, e.g. `done: ["suno", "arrange"]`.
 - Assign a player: put the name on the matching flag, e.g. `leadVox: "Tanner Bishop"`.

@@ -121,6 +121,21 @@
     return `<p class="ly-empty">Lyrics not added yet.</p>`;
   }
 
+  function notesPanel(s) {
+    const tom = String(s.tomNotes || "").trim();
+    const rob = (Array.isArray(s.robNotes) ? s.robNotes : [])
+      .map((t) => String(t || "").trim())
+      .filter(Boolean);
+    if (!tom && !rob.length) return "";
+    const tomBlock = tom
+      ? `<div class="notes-block"><h4>Tom’s notes</h4><p>${esc(tom)}</p></div>`
+      : "";
+    const robBlock = rob.length
+      ? `<div class="notes-block"><h4>Rob’s notes</h4><ul class="rob-notes">${rob.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>`
+      : "";
+    return tomBlock + robBlock;
+  }
+
   function grid() {
     const phases = phFilter === "all" ? PHASES : PHASES.filter((p) => p.id === phFilter);
     const btns = ["pre", "prod", "post", "all"].map((id) => {
@@ -216,6 +231,13 @@
     }).join("");
     const notes = [s.note, s.stageNotes && s.stageNotes.deposit].filter(Boolean);
     const note = notes.map((t) => `<p class="song-note">${esc(t)}</p>`).join("");
+    const notesHtml = notesPanel(s);
+    const notesDetails = notesHtml
+      ? `<details class="brk notes">
+        <summary>Notes</summary>
+        <div class="notes-body">${notesHtml}</div>
+      </details>`
+      : "";
     return `<article class="card" id="song-${s.id}">
       <span class="num" aria-hidden="true">${String(s.n).padStart(2, "0")}</span>
       <h3>${esc(s.title)}</h3>
@@ -227,6 +249,7 @@
         <summary>Lyrics</summary>
         <div class="ly-body">${lyricsPanel(s)}</div>
       </details>
+      ${notesDetails}
       <details class="brk">
         <summary>Demos</summary>
         ${demoList(s)}
@@ -360,12 +383,14 @@
 
   if (gate()) paint();
 
-  if (params.get("shot") === "card" || params.get("shot") === "lyrics") {
+  if (params.get("shot") === "card" || params.get("shot") === "lyrics" || params.get("shot") === "notes") {
     document.body.classList.add("card-shot");
     const cardEl = document.getElementById("song-taste-of-forever");
     if (cardEl) {
       const ly = cardEl.querySelector("details.lyrics");
       if (ly) ly.open = true;
+      const notesEl = cardEl.querySelector("details.notes");
+      if (notesEl) notesEl.open = true;
     }
   }
 })();

@@ -588,6 +588,33 @@ td.opt { background: rgba(91, 110, 128, 0.05); }
 
 .ly-empty { margin: 8px 0 0; font: 400 1.02rem/1.5 var(--sans); color: var(--mute); }
 
+.notes-body {
+  margin: 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.notes-block h4 {
+  margin: 0 0 6px;
+  font: 600 11px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pine);
+}
+.notes-block p {
+  margin: 0;
+  font: 400 0.98rem/1.55 var(--sans);
+  color: var(--ink-soft);
+}
+.rob-notes {
+  margin: 0;
+  padding: 0 0 0 1.15em;
+  font: 400 0.98rem/1.55 var(--sans);
+  color: var(--ink-soft);
+}
+.rob-notes li { margin: 0 0 4px; }
+.rob-notes li:last-child { margin-bottom: 0; }
+
 .dl { list-style: none; margin: 8px 0 0; padding: 0; font-size: 13px; }
 .dl li {
   display: flex; justify-content: space-between; gap: 10px;
